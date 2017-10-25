@@ -20,9 +20,9 @@ Criar DAO
 
 ## Authors
 
-* **[Renan Garcia]**(https://github.com/renangarciasoz)
+* **[Renan Garcia](https://github.com/renangarciasoz)**
 
-* **Bernardo Folha**(https://github.com/asdassasd)
+* **[Bernardo Folha](https://github.com/asdassasd)**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
