@@ -14,7 +14,8 @@ tasks for project progress with github readme.
 
 ```
 Criar Index(front-end)
-Criar DAO
+Criar DAOS das Models
+Criar Models (ver se falta alguma)
 ...
 ```
 
