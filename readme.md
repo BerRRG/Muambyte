@@ -8,7 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Tarefas para controlar o que fazer pelo github.
+### Tasks
+
+tasks for project progress with github readme.
 
 ```
 Criar Index(front-end)
@@ -18,9 +20,9 @@ Criar DAO
 
 ## Authors
 
-* **Renan Garcia** - *Initial work* - [PurpleBooth](https://github.com/renangarciasoz)
+* **[Renan Garcia]**(https://github.com/renangarciasoz)
 
-* **Bernardo Folha** - [PurpleBooth](https://github.com/asdassasd)
+* **Bernardo Folha**(https://github.com/asdassasd)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
