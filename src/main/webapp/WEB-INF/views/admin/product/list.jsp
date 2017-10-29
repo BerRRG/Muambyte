@@ -15,26 +15,32 @@
           		  <thead>
 	                  <tr>
 	                  	<td>id</td>
-		                  	<td>name</td>
-		                  	<td>description</td>
-		                  	<td>price</td>
+		                  	<td>Nome</td>
+		                  	<td>Descrição</td>
+		                  	<td>Preço</td>
+		                  	<td>Destaque</td>
+		                  	<td>Preço Desconto</td>
+		                  	<td>Url da imagem</td>
 						<td>actions</td>
 	                  </tr>
                   </thead>
                   <tbody>
                   <c:forEach items='${paginatedList.currentList}' var='object'>         		
 	                  <tr>
-						<td><a href="<c:url value='/product'/>/${object.id}">${object.id}</a></td>
+						<td><a href="<c:url value='/admin/product'/>/${object.id}">${object.id}</a></td>
 		                  	<td>${object.name}</td>
 		                  	<td>${object.description}</td>
 		                  	<td>${object.price}</td>
-	                    <td><a href="<c:url value='/product/remove'/>/${object.id}">Remove</a></td>
+		                  	<td>${object.featured}</td>
+		                  	<td>${object.discount_price}</td>
+		                  	<td>${object.image}</td>
+	                    <td><a href="<c:url value='/admin/product/remove'/>/${object.id}">Remove</a></td>
 					  </tr>
                   </c:forEach>
                   </tbody>
           </table>
-		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/product"/>
-          <a href="<c:url value='/product/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
+		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/admin/product"/>
+          <a href="<c:url value='/admin/product/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
 		</div>
 		<div class="search-right"></div>
     </div>
