@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+@import 'partials/product-admin';
+
 
 * {
 	font-family: 'Ubuntu', sans-serif;
@@ -178,4 +180,5 @@
 .system-container {
 	background-color: #EDF4FB;
 	color: #36384C;
+	padding: 30px;
 }

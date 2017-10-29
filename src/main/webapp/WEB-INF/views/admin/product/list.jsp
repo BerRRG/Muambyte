@@ -7,10 +7,10 @@
 <jsp:attribute name="extraScripts">
 <script src="<c:url value='/assets/js/jquery.jqpagination.js'/>"></script>
 </jsp:attribute>
-  <div>
-    <div class ="container min-container">
-      <h2 class="basic-title">List product</h2>
-        <div class="well">
+<jsp:body>
+    <div class="products-admin">
+      <h2 class="basic-title">Produtos</h2>
+        <div class="products-wrapper">
           <table class="table table-condensed table-bordered table-striped table-hover">
           		  <thead>
 	                  <tr>
@@ -35,8 +35,8 @@
           </table>
 		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/product"/>
           <a href="<c:url value='/product/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
-        </div>
+		</div>
+		<div class="search-right"></div>
     </div>
-  </div>
 </jsp:body>
 </template:admin>

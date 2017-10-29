@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
+.product-admin {
+  height: 100%;
+  width: 100%;
+  grid-template-areas: "products-wrapper" "search-right";
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100%;
+}
+.product-admin .products-wrapper {
+  display: grid;
+  grid-template-rows: 20% 30% 50%;
+}
+.product-admin .search-right {
+  display: grid;
+  grid-template-rows: 20% 80%;
+}
+
 * {
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
@@ -150,4 +166,5 @@
 .system-container {
   background-color: #EDF4FB;
   color: #36384C;
+  padding: 30px;
 }

@@ -36,37 +36,37 @@
 		</div>
 		
 		<div class="nav-left">
-			<a href="/admin/#/dashboard" class="item-nav">
+			<a href="<c:url value='/admin/dashboard'/>" class="item-nav">
 				<span class="item-rectangle"></span>
-				<span class="item-icon icon-bar-chart"></span>
+				<span class="item-icon icon-speedometer"></span>
 				<span class="item-name">Dashboard</span>
 			</a>
 
-			<a href="/admin/#/products" class="item-nav">
+			<a href="<c:url value='/admin/product'/>" class="item-nav">
 				<span class="item-rectangle"></span>
 				<span class="item-icon icon-social-dropbox"></span>
 				<span class="item-name">Produtos</span>
 			</a>
 
-			<a href="/admin/#/categories" class="item-nav">
+			<a href="<c:url value='/admin/categorie'/>" class="item-nav">
 				<span class="item-rectangle"></span>
-				<span class="item-icon icon-directions"></span>
+				<span class="item-icon icon-pin"></span>
 				<span class="item-name">Categorias</span>
 			</a>
 
-			<a href="/admin/#/clients" class="item-nav">
+			<a href="<c:url value='/admin/client'/>" class="item-nav">
 				<span class="item-rectangle"></span>
-				<span class="item-icon icon-user-following"></span>
+				<span class="item-icon icon-people"></span>
 				<span class="item-name">Clientes</span>
 			</a>
 
-			<a href="/admin/#/orders" class="item-nav">
+			<a href="<c:url value='/admin/order'/>" class="item-nav">
 				<span class="item-rectangle"></span>
 				<span class="item-icon icon-doc"></span>
 				<span class="item-name">Pedidos</span>
 			</a>
 
-			<a href="/admin/#/carts-made" class="item-nav">
+			<a href="<c:url value='/admin/carts-made'/>" class="item-nav">
 				<span class="item-rectangle"></span>
 				<span class="item-icon icon-basket-loaded"></span>
 				<span class="item-name">Carrinhos feitos</span>

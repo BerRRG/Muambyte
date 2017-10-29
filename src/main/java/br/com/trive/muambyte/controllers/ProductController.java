@@ -19,7 +19,7 @@ import br.com.trive.muambyte.models.Product;
 import br.com.trive.muambyte.models.Category;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("admin/product")
 @Transactional
 public class ProductController
 {
@@ -32,7 +32,7 @@ public class ProductController
    @GetMapping("/form")
    public ModelAndView form(Product product)
    {
-      ModelAndView modelAndView = new ModelAndView("product/form-add");
+      ModelAndView modelAndView = new ModelAndView("admin/product/form-add");
       return loadFormDependencies(modelAndView);
 
    }
@@ -51,13 +51,13 @@ public class ProductController
          return form(product);
       }
       productDao.save(product);
-      return new ModelAndView("redirect:/product");
+      return new ModelAndView("redirect:/admin/product");
    }
 
    @GetMapping("/{id}")
    public ModelAndView load(@PathVariable("id") Integer id)
    {
-      ModelAndView modelAndView = new ModelAndView("product/form-update");
+      ModelAndView modelAndView = new ModelAndView("admin/product/form-update");
       modelAndView.addObject("product", productDao.findById(id));
       loadFormDependencies(modelAndView);
       return modelAndView;
@@ -66,7 +66,7 @@ public class ProductController
    @GetMapping
    public ModelAndView list(@RequestParam(defaultValue = "0", required = false) int page)
    {
-      ModelAndView modelAndView = new ModelAndView("product/list");
+      ModelAndView modelAndView = new ModelAndView("admin/product/list");
       modelAndView.addObject("paginatedList", productDao.paginated(page, 10));
       return modelAndView;
    }
@@ -77,7 +77,7 @@ public class ProductController
    {
       Product product = productDao.findById(id);
       productDao.remove(product);
-      return "redirect:/product";
+      return "redirect:/admin/product";
    }
 
    @PostMapping("/{id}")
@@ -86,9 +86,9 @@ public class ProductController
       product.setId(id);
       if (bindingResult.hasErrors())
       {
-         return loadFormDependencies(new ModelAndView("product/form-update"));
+         return loadFormDependencies(new ModelAndView("admin/product/form-update"));
       }
       productDao.update(product);
-      return new ModelAndView("redirect:/product");
+      return new ModelAndView("admin/redirect:/product");
    }
 }

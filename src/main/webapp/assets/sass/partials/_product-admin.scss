@@ -1,0 +1,17 @@
+.product-admin {
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "products-wrapper" "search-right";
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
+
+    .products-wrapper {
+        display: grid;
+        grid-template-rows: 20% 30% 50%;
+    }
+
+    .search-right {
+        display: grid;
+        grid-template-rows: 20% 80%;
+    }
+}
