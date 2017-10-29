@@ -89,6 +89,6 @@ public class ProductController
          return loadFormDependencies(new ModelAndView("admin/product/form-update"));
       }
       productDao.update(product);
-      return new ModelAndView("admin/redirect:/product");
+      return new ModelAndView("redirect:/admin/product");
    }
 }

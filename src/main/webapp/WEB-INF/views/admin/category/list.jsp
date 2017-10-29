@@ -24,16 +24,16 @@
                   <tbody>
                   <c:forEach items='${paginatedList.currentList}' var='object'>         		
 	                  <tr>
-						<td><a href="<c:url value='/category'/>/${object.id}">${object.id}</a></td>
+						<td><a href="<c:url value='/admin/category'/>/${object.id}">${object.id}</a></td>
 		                  	<td>${object.name}</td>
 		                  	<td>${object.description}</td>
-	                    <td><a href="<c:url value='/category/remove'/>/${object.id}">Remove</a></td>
+	                    <td><a href="<c:url value='/admin/category/remove'/>/${object.id}">Remove</a></td>
 					  </tr>
                   </c:forEach>
                   </tbody>
           </table>
-		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/category"/>
-          <a href="<c:url value='/category/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
+		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/admin/category"/>
+          <a href="<c:url value='/admin/category/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
         </div>
     </div>
   </div>
