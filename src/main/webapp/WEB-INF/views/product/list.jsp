@@ -7,7 +7,6 @@
 <jsp:attribute name="extraScripts">
 <script src="<c:url value='/assets/js/jquery.jqpagination.js'/>"></script>
 </jsp:attribute>
-<jsp:body>
   <div>
     <div class ="container min-container">
       <h2 class="basic-title">List product</h2>

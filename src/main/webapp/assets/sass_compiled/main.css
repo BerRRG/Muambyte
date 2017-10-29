@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
+* {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==================== */
+/* Grid principal admin */
+/* ==================== */
+.grid-system {
+  display: grid;
+  grid-template-columns: 18vw 82vw;
+  grid-template-rows: 100vh;
+  max-height: 100vh;
+}
+
+/* =============== */
+/* Tudo do sidebar */
+/* =============== */
+.sidebar {
+  display: grid;
+  grid-template-rows: 15vh 20vh 60vh 5vh;
+  background-color: #36384C;
+  grid-row-gap: 1px solid black;
+  color: white;
+  height: 100%;
+}
+.sidebar .hamburguer-menu {
+  width: 100%;
+  background-color: #115396;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #FFFF;
+}
+.sidebar .hamburguer-menu .title {
+  font-size: 18px;
+}
+.sidebar .hamburguer-menu .subtitle {
+  font-weight: 300;
+  font-size: 12px;
+}
+.sidebar .hamburguer-menu .menu-action {
+  width: 10%;
+  min-width: 20px;
+}
+.sidebar .hamburguer-menu .menu-action button {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: white;
+}
+.sidebar .hamburguer-menu .menu-action .icon-menu {
+  font-size: 20px;
+}
+.sidebar .social {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.sidebar .social .user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: url(https://www.atomix.com.au/media/2015/06/atomix_user31.png) center center no-repeat;
+  background-size: cover;
+}
+.sidebar .social .username {
+  color: white;
+}
+.sidebar .nav-left {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.sidebar .nav-left .item-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 3px 0px;
+}
+.sidebar .nav-left .item-nav .item-rectangle {
+  width: 4px;
+  height: 100%;
+  background-color: #115396;
+}
+.sidebar .nav-left .item-nav .item-icon {
+  margin-left: 15px;
+  color: #EDF4FB;
+  font-size: 14px;
+  font-weight: 200;
+}
+.sidebar .nav-left .item-nav .item-name {
+  margin-left: 10px;
+  color: #EDF4FB;
+  font-size: 14px;
+  font-weight: 300;
+}
+.sidebar .nav-left .item-nav:hover .item-rectangle {
+  width: 6px;
+  transition: 300ms;
+}
+.sidebar .nav-left .item-nav:active {
+  background: rgba(0, 1, 16, 0.67);
+}
+.sidebar .nav-left .item-nav:active .item-rectangle {
+  width: 6px;
+  transition: 300ms;
+}
+.sidebar .sidebar-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 1, 16, 0.67);
+}
+.sidebar .sidebar-footer .copyright {
+  font-size: 10px;
+  color: rgba(204, 204, 204, 0.67);
+  white-space: nowrap;
+}
+.sidebar .sidebar-footer .version {
+  font-size: 10px;
+  color: rgba(204, 204, 204, 0.67);
+  white-space: nowrap;
+}
+
+/* =========================== */
+/* Tudo do container principal */
+/* =========================== */
+.system-container {
+  background-color: #EDF4FB;
+  color: #36384C;
+}
