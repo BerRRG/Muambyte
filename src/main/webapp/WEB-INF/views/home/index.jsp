@@ -10,56 +10,55 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-.grid-system{
-	width: 100vw;
+
+.sistem-root {
 	height: 100vh;
-	grid-template-columns: 1fr;
-	grid-template-rows: 20vh 65vh 15vh;
+	min-height: 680px;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 1fr 0.5fr 4fr 1fr 1fr;
 }
 
-.header {
-	background-color: rgba(0,0,0, 0.8);
+.nav-header{
+	background-color: #2980B9;
+	color: white;
 }
 
-main {
-	background-color: rgba(0,0,0, 0.3);
+.nav-bar{
+	background-color: #1A5276;
+	color: white;
 }
 
-footer {
-	background-color: rgba(0,0,0, 0.8);
+.links {
+	background-color: #A9CCE3;
 }
+
+.container {
+	background-color: #ECF0F1;
+}
+
+.aside {
+	background-color: #5D6D7E;
+	color: white;
+}
+
+.footer { 
+	background-color: #212F3C;
+	color: white;
+}
+
 </style>
 <title>Muambyte</title>
 </head>
 <body>
-	<div class="grid-system">
-		<header class="header">
-			<div class="navbar-principal">
-				<div class="logo">logo</div>
-				<div class="contact">contato</div>
-				<div class="search">search</div>
-				<div class="register">registrar</div>
-				<div class="login">logar</div>
-				<div class="cart">carrinho</div>
-			</div>
-			<div class="navbar-secundaria">
-				<div class="dropdown">
-					<a class="link-menu">item</a>
-					<div class="dropdown-content">
-						<span>sub item</span>
-					</div>
-				</div>
 	
-			</div>
-		</header>
-		<main>
-		<div></div>
-
-		</main>
-		<footer></footer>
+	<div class="sistem-root">
+		<div class="nav-header"><h1>nav-header</h1></div>
+		<div class="nav-bar"><h1>nav-bar</h1></div>
+		<div class="links"><h1>links</h1></div>
+		<div class="container"><h1>container</h1></div>
+		<div class="aside"><h1>aside</h1></div>
+		<div class="footer"><h1>footer</h1></div>
 	</div>
-
-
-
 </body>
 </html>

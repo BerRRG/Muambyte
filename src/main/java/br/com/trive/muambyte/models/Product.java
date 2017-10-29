@@ -18,11 +18,18 @@ public class Product
    private Integer id;
    private String name;
    private String description;
-   private BigDecimal price;
+   private double price;
+   private int quantity;
    @ManyToOne
    private Category category;
 
-   public Integer getId()
+   public Product(String productName, double itemPrice, int numPurchased) {
+	  name = productName;
+	  price = itemPrice;
+	  quantity = numPurchased;
+}
+
+public Integer getId()
    {
       return this.id;
    }
