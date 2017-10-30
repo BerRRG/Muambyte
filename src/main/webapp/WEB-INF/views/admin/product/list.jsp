@@ -48,7 +48,7 @@
 		                  	<td>${object.featured}</td>
 		                  	<td>${object.discount_price}</td>
 							<td>${object.image}</td>
-	                    <td><a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></a>
+	                    <td><a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
 							<a class="btn btn-danger" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
 						</td>
 					  </tr>
