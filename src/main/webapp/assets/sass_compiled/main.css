@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
 .header {
-  width: 100%;
-  height: 100px;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -17,6 +15,9 @@
   font-size: 14px;
 }
 
+.products-admin {
+  padding: 30px;
+}
 .products-admin .search {
   background: white;
   height: 50px;
@@ -24,13 +25,13 @@
   justify-content: flex-start;
   align-items: center;
   width: 430px;
-  padding-left: 30px;
+  padding: 3px 3px 3px 15px;
 }
 .products-admin .search i {
-  width: 10%;
+  width: 8%;
 }
 .products-admin .search input {
-  width: 70%;
+  width: 72%;
   height: 100%;
   border: none;
   outline: none;
@@ -38,7 +39,7 @@
 .products-admin .search .btn-search {
   width: 20%;
   height: 100%;
-  background-color: rgba(34, 8, 210, 0.67);
+  background-color: rgba(0, 26, 141, 0.67);
   color: white;
   text-decoration: none;
   border: none;
@@ -48,16 +49,16 @@
   justify-content: center;
   align-items: center;
   font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
 }
 .products-admin .search .btn-search:hover {
-  background-color: rgba(34, 8, 210, 0.67);
+  background-color: rgba(0, 26, 141, 0.6);
   border: none;
   outline: none;
 }
 .products-admin .products-wrapper {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
+  margin-top: 20px;
 }
 
 * {
@@ -65,30 +66,39 @@
   font-size: 16px;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-/* ==================== */
-/* Grid principal admin */
-/* ==================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
 .grid-system {
   display: grid;
-  grid-template-columns: 18vw 82vw;
+  grid-template-columns: 15vw 85vw;
   grid-template-rows: 100vh;
-  max-height: 100vh;
 }
-
-/* =============== */
-/* Tudo do sidebar */
-/* =============== */
-.sidebar {
+.grid-system .sidebar {
   display: grid;
-  grid-template-rows: 15vh 20vh 60vh 5vh;
+  grid-template-rows: 20% 20% 55% 5%;
   background-color: #36384C;
   grid-row-gap: 1px solid black;
   color: white;
-  height: 100%;
 }
-.sidebar .hamburguer-menu {
+.grid-system .sidebar .hamburguer-menu {
   width: 100%;
   background-color: #115396;
   color: white;
@@ -99,18 +109,20 @@
   padding: 20px;
   color: #FFFF;
 }
-.sidebar .hamburguer-menu .title {
+.grid-system .sidebar .hamburguer-menu .title {
   font-size: 18px;
+  max-width: 60%;
 }
-.sidebar .hamburguer-menu .subtitle {
+.grid-system .sidebar .hamburguer-menu .subtitle {
   font-weight: 300;
   font-size: 12px;
+  max-width: 60%;
 }
-.sidebar .hamburguer-menu .menu-action {
+.grid-system .sidebar .hamburguer-menu .menu-action {
   width: 10%;
   min-width: 20px;
 }
-.sidebar .hamburguer-menu .menu-action button {
+.grid-system .sidebar .hamburguer-menu .menu-action button {
   width: 10px;
   height: 10px;
   background: transparent;
@@ -118,97 +130,107 @@
   border: none;
   color: white;
 }
-.sidebar .hamburguer-menu .menu-action .icon-menu {
+.grid-system .sidebar .hamburguer-menu .menu-action .icon-menu {
   font-size: 20px;
 }
-.sidebar .social {
+.grid-system .sidebar .social {
   padding-top: 20px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-.sidebar .social .user-image {
+.grid-system .sidebar .social .user-image {
   width: 60px;
   height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 50%;
   background: url(https://www.atomix.com.au/media/2015/06/atomix_user31.png) center center no-repeat;
   background-size: cover;
 }
-.sidebar .social .username {
+.grid-system .sidebar .social .username {
   color: white;
 }
-.sidebar .nav-left {
-  padding-top: 20px;
-  width: 100%;
+.grid-system .sidebar .nav-left {
+  margin-top: 3vh;
+  max-height: 210px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.sidebar .nav-left .item-nav {
+.grid-system .sidebar .nav-left .item-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 35px;
+  min-height: 35px;
   text-decoration: none;
   cursor: pointer;
-  padding: 3px 0px;
 }
-.sidebar .nav-left .item-nav .item-rectangle {
+.grid-system .sidebar .nav-left .item-nav .item-rectangle {
   width: 4px;
   height: 100%;
-  background-color: #115396;
+  background-color: transparent;
 }
-.sidebar .nav-left .item-nav .item-icon {
+.grid-system .sidebar .nav-left .item-nav .item-icon {
   margin-left: 15px;
-  color: #EDF4FB;
+  color: #b3b3b3;
   font-size: 14px;
   font-weight: 200;
 }
-.sidebar .nav-left .item-nav .item-name {
+.grid-system .sidebar .nav-left .item-nav .item-name {
   margin-left: 10px;
-  color: #EDF4FB;
+  color: #b3b3b3;
   font-size: 14px;
   font-weight: 300;
 }
-.sidebar .nav-left .item-nav:hover .item-rectangle {
-  width: 6px;
-  transition: 300ms;
-}
-.sidebar .nav-left .item-nav:active {
+.grid-system .sidebar .nav-left .item-nav:hover {
   background: rgba(0, 1, 16, 0.67);
 }
-.sidebar .nav-left .item-nav:active .item-rectangle {
+.grid-system .sidebar .nav-left .item-nav:hover .item-icon {
+  color: white;
+}
+.grid-system .sidebar .nav-left .item-nav:hover .item-name {
+  color: white;
+}
+.grid-system .sidebar .nav-left .item-nav:hover .item-rectangle {
+  width: 6px;
+  transition: 300ms;
+  background-color: #115396;
+}
+.grid-system .sidebar .nav-left .item-nav:active {
+  background: rgba(0, 1, 16, 0.67);
+}
+.grid-system .sidebar .nav-left .item-nav:active .item-rectangle {
   width: 6px;
   transition: 300ms;
 }
-.sidebar .sidebar-footer {
+.grid-system .sidebar .sidebar-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  width: 100%;
   background-color: rgba(0, 1, 16, 0.67);
 }
-.sidebar .sidebar-footer .copyright {
+.grid-system .sidebar .sidebar-footer .copyright {
   font-size: 10px;
   color: rgba(204, 204, 204, 0.67);
   white-space: nowrap;
 }
-.sidebar .sidebar-footer .version {
+.grid-system .sidebar .sidebar-footer .version {
   font-size: 10px;
   color: rgba(204, 204, 204, 0.67);
   white-space: nowrap;
 }
-
-/* =========================== */
-/* Tudo do container principal */
-/* =========================== */
-.system-container {
+.grid-system .system-container {
   background-color: #EDF4FB;
-  color: #36384C;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  grid-template-columns: 1fr;
 }
