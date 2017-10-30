@@ -17,7 +17,7 @@ import br.com.trive.muambyte.daos.CategoryDao;
 import br.com.trive.muambyte.models.Category;
 
 @Controller
-@RequestMapping("/category")
+@RequestMapping("admin/category")
 @Transactional
 public class CategoryController
 {
@@ -28,7 +28,7 @@ public class CategoryController
    @GetMapping("/form")
    public ModelAndView form(Category category)
    {
-      ModelAndView modelAndView = new ModelAndView("category/form-add");
+      ModelAndView modelAndView = new ModelAndView("admin/category/form-add");
       return modelAndView;
 
    }
@@ -41,13 +41,13 @@ public class CategoryController
          return form(category);
       }
       categoryDao.save(category);
-      return new ModelAndView("redirect:/category");
+      return new ModelAndView("redirect:/admin/category");
    }
 
    @GetMapping("/{id}")
    public ModelAndView load(@PathVariable("id") Integer id)
    {
-      ModelAndView modelAndView = new ModelAndView("category/form-update");
+      ModelAndView modelAndView = new ModelAndView("admin/category/form-update");
       modelAndView.addObject("category", categoryDao.findById(id));
       return modelAndView;
    }
@@ -55,7 +55,7 @@ public class CategoryController
    @GetMapping
    public ModelAndView list(@RequestParam(defaultValue = "0", required = false) int page)
    {
-      ModelAndView modelAndView = new ModelAndView("category/list");
+      ModelAndView modelAndView = new ModelAndView("admin/category/list");
       modelAndView.addObject("paginatedList", categoryDao.paginated(page, 10));
       return modelAndView;
    }
@@ -66,7 +66,7 @@ public class CategoryController
    {
       Category category = categoryDao.findById(id);
       categoryDao.remove(category);
-      return "redirect:/category";
+      return "redirect:/admin/category";
    }
 
    @PostMapping("/{id}")
@@ -75,9 +75,9 @@ public class CategoryController
       category.setId(id);
       if (bindingResult.hasErrors())
       {
-         return new ModelAndView("category/form-update");
+         return new ModelAndView("admin/category/form-update");
       }
       categoryDao.update(category);
-      return new ModelAndView("redirect:/category");
+      return new ModelAndView("redirect:/admin/category");
    }
 }

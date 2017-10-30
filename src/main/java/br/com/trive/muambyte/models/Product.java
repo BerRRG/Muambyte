@@ -19,6 +19,9 @@ public class Product
    private String name;
    private String description;
    private BigDecimal price;
+   private BigDecimal discount_price;
+   private Boolean featured;
+   private String image;
    @ManyToOne
    private Category category;
 
@@ -71,4 +74,28 @@ public class Product
    {
       this.category = category;
    }
+
+	public BigDecimal getDiscount_price() {
+		return discount_price;
+	}
+	
+	public void setDiscount_price(BigDecimal discount_price) {
+		this.discount_price = discount_price;
+	}
+	
+	public Boolean getFeatured() {
+		return featured;
+	}
+	
+	public void setFeatured(Boolean featured) {
+		this.featured = featured;
+}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 }
