@@ -1,18 +1,63 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
-.product-admin {
-  height: 100%;
+.header {
   width: 100%;
-  grid-template-areas: "products-wrapper" "search-right";
-  grid-template-columns: 70% 30%;
-  grid-template-rows: 100%;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(216, 216, 216, 0.67);
 }
-.product-admin .products-wrapper {
-  display: grid;
-  grid-template-rows: 20% 30% 50%;
+.header .title {
+  font-size: 36px;
+  font-weight: 400;
 }
-.product-admin .search-right {
-  display: grid;
-  grid-template-rows: 20% 80%;
+.header .action {
+  font-size: 14px;
+}
+
+.products-admin .search {
+  background: white;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 430px;
+  padding-left: 30px;
+}
+.products-admin .search i {
+  width: 10%;
+}
+.products-admin .search input {
+  width: 70%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.products-admin .search .btn-search {
+  width: 20%;
+  height: 100%;
+  background-color: rgba(34, 8, 210, 0.67);
+  color: white;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+.products-admin .search .btn-search:hover {
+  background-color: rgba(34, 8, 210, 0.67);
+  border: none;
+  outline: none;
+}
+.products-admin .products-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
 }
 
 * {
@@ -166,5 +211,4 @@
 .system-container {
   background-color: #EDF4FB;
   color: #36384C;
-  padding: 30px;
 }

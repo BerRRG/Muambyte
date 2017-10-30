@@ -1,17 +1,73 @@
-.product-admin {
-    height: 100%;
+.header {
     width: 100%;
-    grid-template-areas: "products-wrapper" "search-right";
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 100%;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(216, 216, 216, 0.67);
 
-    .products-wrapper {
-        display: grid;
-        grid-template-rows: 20% 30% 50%;
+    .title {
+        font-size: 36px;
+        font-weight: 400;
     }
 
-    .search-right {
-        display: grid;
-        grid-template-rows: 20% 80%;
+    .action {
+        font-size: 14px;
+    }
+}
+
+.products-admin {
+
+    
+    .search {
+        background: white;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 430px;
+        padding-left: 30px;
+
+        i {
+            width: 10%;
+        }
+
+        input {
+            width: 70%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+
+        .btn-search {
+            width: 20%;
+            height: 100%;
+            background-color: rgba(34, 8, 210, 0.67);
+            color: white;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+
+            &:hover {
+                background-color: rgba(34, 8, 210, 0.67);
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+
+    .products-wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+
     }
 }
