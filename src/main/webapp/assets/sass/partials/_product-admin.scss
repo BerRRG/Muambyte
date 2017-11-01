@@ -1,6 +1,5 @@
+
 .header {
-    width: 100%;
-    height: 100px;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -19,8 +18,8 @@
 }
 
 .products-admin {
-
-    
+    padding: 30px;
+        
     .search {
         background: white;
         height: 50px;
@@ -28,14 +27,14 @@
         justify-content: flex-start;
         align-items: center;
         width: 430px;
-        padding-left: 30px;
+        padding: 3px 3px 3px 15px;
 
         i {
-            width: 10%;
+            width: 8%;
         }
 
         input {
-            width: 70%;
+            width: 72%;
             height: 100%;
             border: none;
             outline: none;
@@ -44,7 +43,7 @@
         .btn-search {
             width: 20%;
             height: 100%;
-            background-color: rgba(34, 8, 210, 0.67);
+            background-color: rgba(0, 26, 141, 0.67);
             color: white;
             text-decoration: none;
             border: none;
@@ -54,9 +53,11 @@
             justify-content: center;
             align-items: center;
             font-weight: 500;
+            border-radius: 2px;
+            cursor: pointer;
 
             &:hover {
-                background-color: rgba(34, 8, 210, 0.67);
+                background-color: rgba(0, 26, 141, 0.6);
                 border: none;
                 outline: none;
             }
@@ -65,9 +66,6 @@
 
 
     .products-wrapper {
-        width: 100%;
-        height: 100%;
-        padding: 30px;
-
+       margin-top: 20px;
     }
 }

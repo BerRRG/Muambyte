@@ -1,183 +1,197 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 @import 'partials/product-admin';
 
-
 * {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 16px;
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
-/* ==================== */
-/* Grid principal admin */
-/* ==================== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track { background: transparent; }
+    
+::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 1px;
+    
+    &:hover { background-color: rgba(128, 128, 128, 0.2); }
+}
+
 .grid-system {
 	display: grid;
-	grid-template-columns: 18vw 82vw;
+	grid-template-columns: 15vw 85vw;
 	grid-template-rows: 100vh;
-	max-height: 100vh;
-}
-
-
-/* =============== */
-/* Tudo do sidebar */
-/* =============== */
-.sidebar {
-	display: grid;
-	grid-template-rows: 15vh 20vh 60vh 5vh;
-	background-color: #36384C;
-	grid-row-gap: 1px solid black;
-	color: white;
-	height: 100%;
-
-	.hamburguer-menu {
-		width: 100%;
-		//height: 110px;
-		background-color: #115396;
+		
+	.sidebar {
+		display: grid;
+		grid-template-rows: 20% 20% 55% 5%;
+		background-color: #36384C;
+		grid-row-gap: 1px solid black;
 		color: white;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		padding: 20px;
-		color: #FFFF;
 
-		.title {
-			font-size: 18px;
-		}
-
-		.subtitle {
-			font-weight: 300;
-			font-size: 12px;
-		}
-
-		.menu-action {
-			width: 10%;
-			min-width: 20px;
-
-			button {
-				width: 10px;
-				height: 10px;
-				background: transparent;
-				outline: none;
-				border: none;
-				color: white;
-			}
-
-			.icon-menu {
-				font-size: 20px;
-			}
-		}
-	}
-
-	.social {
-		padding-top: 20px;
-		width: 100%;
-		//height: 100px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-
-		.user-image {
-			width: 60px;
-			height: 60px;
-			border-radius: 50%;
-			background: url(https://www.atomix.com.au/media/2015/06/atomix_user31.png) center center no-repeat;
-			background-size: cover;
-		}
-
-		.username {
+		.hamburguer-menu {
+			width: 100%;
+			background-color: #115396;
 			color: white;
-		}
-	}
-
-	.nav-left {
-		padding-top: 20px;
-		//height: 40%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-
-		.item-nav {
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-start;
+			justify-content: space-between;
 			align-items: center;
-			width: 100%;
-			height: 30px;
-			text-decoration: none;
-			cursor: pointer;
-			padding: 3px 0px;
+			padding: 20px;
+			color: #FFFF;
 
-			.item-rectangle {
-				width: 4px;
-				height: 100%;
-				background-color: #115396;
+			.title {
+				font-size: 18px;
+				max-width: 60%;
 			}
 
-			.item-icon {
-				margin-left: 15px;
-				color: #EDF4FB;
-				font-size: 14px;
-				font-weight: 200;
-			}
-
-			.item-name {
-				margin-left: 10px;
-				color: #EDF4FB;
-				font-size: 14px;
+			.subtitle {
 				font-weight: 300;
+				font-size: 12px;
+				max-width: 60%;
 			}
 
-			&:hover {
-				.item-rectangle {
-					width: 6px;
-					transition: 300ms;
+			.menu-action {
+				width: 10%;
+				min-width: 20px;
+
+				button {
+					width: 10px;
+					height: 10px;
+					background: transparent;
+					outline: none;
+					border: none;
+					color: white;
+				}
+
+				.icon-menu {
+					font-size: 20px;
 				}
 			}
+		}
 
-			&:active {
-				background: rgba(0, 1, 16, 0.67);
+		.social {
+			padding-top: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+
+			.user-image {
+				width: 60px;
+				height: 60px;
+				min-width: 60px;
+				min-height: 60px;
+				border-radius: 50%;
+				background: url(https://www.atomix.com.au/media/2015/06/atomix_user31.png) center center no-repeat;
+				background-size: cover;
+			}
+
+			.username {
+				color: white;
+			}
+		}
+
+		.nav-left {
+			margin-top: 3vh;
+			max-height: 210px;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			.item-nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				width: 100%;
+				height: 35px;
+				min-height: 35px;
+				text-decoration: none;
+				cursor: pointer;
 
 				.item-rectangle {
-					width: 6px;
-					transition: 300ms;
+					width: 4px;
+					height: 100%;
+					background-color: transparent;
 				}
+
+				.item-icon {
+					margin-left: 15px;
+					color: rgb(179, 179, 179);
+					font-size: 14px;
+					font-weight: 200;
+				}
+
+				.item-name {
+					margin-left: 10px;
+					color: rgb(179, 179, 179);
+					font-size: 14px;
+					font-weight: 300;
+				}
+
+				&:hover {
+					background: rgba(0, 1, 16, 0.67);
+
+					.item-icon {
+						color: rgb(255, 255, 255);
+					}
+		
+					.item-name {
+						color: rgb(255, 255, 255);
+					}
+
+					.item-rectangle {
+						width: 6px;
+						transition: 300ms;
+						background-color: #115396;
+					}
+				}
+
+				&:active {
+					background: rgba(0, 1, 16, 0.67);
+
+					.item-rectangle {
+						width: 6px;
+						transition: 300ms;
+					}
+				}
+			}
+		}
+
+		.sidebar-footer {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 10px;
+			align-items: center;
+			background-color: rgba(0, 1, 16, 0.67);
+
+			.copyright {
+				font-size: 10px;
+				color: rgba(204, 204, 204, 0.67);
+				white-space: nowrap;
+			}
+			.version {
+				font-size: 10px;
+				color: rgba(204, 204, 204, 0.67);
+				white-space: nowrap;
 			}
 		}
 	}
 
-	.sidebar-footer {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 10px;
-		align-items: center;
-		width: 100%;
-		//height: 30px;
-		background-color: rgba(0, 1, 16, 0.67);
-
-		.copyright {
-			font-size: 10px;
-			color: rgba(204, 204, 204, 0.67);
-			white-space: nowrap;
-		}
-		.version {
-			font-size: 10px;
-			color: rgba(204, 204, 204, 0.67);
-			white-space: nowrap;
-		}
+	.system-container {
+		background-color: #EDF4FB;
+		display: grid;
+		grid-template-rows: 20% 80%;
+		grid-template-columns: 1fr;
 	}
-}
-
-
-/* =========================== */
-/* Tudo do container principal */
-/* =========================== */
-.system-container {
-	background-color: #EDF4FB;
-	color: #36384C;
 }
