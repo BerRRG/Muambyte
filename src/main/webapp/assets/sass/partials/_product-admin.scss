@@ -73,7 +73,7 @@
         margin-top: 20px;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 200px;
         grid-template-rows: auto;
         grid-column-gap: 1.5em;
         grid-row-gap: 1.5em;
@@ -99,6 +99,10 @@
         }
 
         .name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
             span {
             font-weight: 500;
             }
@@ -106,6 +110,9 @@
         } 
 
         .description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             span {
             font-weight: 500;
