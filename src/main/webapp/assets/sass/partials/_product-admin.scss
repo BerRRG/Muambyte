@@ -73,7 +73,7 @@
         margin-top: 20px;
         width: 100%;
         display: grid;
-        grid-template-columns: 200px;
+        grid-template-columns: repeat(4, 250px);
         grid-template-rows: auto;
         grid-column-gap: 1.5em;
         grid-row-gap: 1.5em;

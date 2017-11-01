@@ -27,12 +27,12 @@
 		<div class="products-wrapper">
 			<c:forEach items='${paginatedList.currentList}' var='object'>
 				<div class="product">
-					<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover"></div>
-					<div class="name"><span>nome do produto: </span>${object.name}</div>
+					<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover; background-size: 100% 100%;"></div>
+					<div class="name"><span>${object.name}</span></div>
 					<div class="description"><span>descrição: </span>${object.description}</div>
-					<div class="price"><span>preço:</span>${object.price}</div>
-					<div class="price-discount"><span>preço de desconto:</span>${object.discount_price}</div>
-					<div class="prateleira"><span>prateleira: </span>${object.featured}</div>
+					<div class="price"><span>preço: </span>${object.price}</div>
+					<div class="price-discount"><span>desconto: </span>${object.discount_price}</div>
+					<div class="prateleira"><span>categoria: </span>${object.category}</div>
 					<div class="actions">
 						<a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
 						<a class="btn btn-danger" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
