@@ -25,40 +25,21 @@
 		</div>
 		
 		<div class="products-wrapper">
-          <table class="table table-condensed table-bordered table-striped table-hover">
-          		  <thead>
-	                  <tr>
-	                  	<td>id</td>
-		                  	<td>Nome</td>
-		                  	<td>Descrição</td>
-		                  	<td>Preço</td>
-		                  	<td>Destaque</td>
-		                  	<td>Preço de desconto</td>
-		                  	<td>Endereço da imagem</td>
-						<td>actions</td>
-	                  </tr>
-                  </thead>
-                  <tbody>
-                  <c:forEach items='${paginatedList.currentList}' var='object'>         		
-	                  <tr>
-						<td><a href="<c:url value='/admin/product'/>/${object.id}">${object.id}</a></td>
-		                  	<td>${object.name}</td>
-		                  	<td>${object.description}</td>
-		                  	<td>${object.price}</td>
-		                  	<td>${object.featured}</td>
-		                  	<td>${object.discount_price}</td>
-							<td>${object.image}</td>
-	                    <td><a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
-							<a class="btn btn-danger" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
-						</td>
-					  </tr>
-                  </c:forEach>
-                  </tbody>
-          </table>
-		  <template:paginationComponent paginatedList="${paginatedList}" page="${param.page}" action="/admin/product"/>
-          
+			<c:forEach items='${paginatedList.currentList}' var='object'>
+				<div class="product">
+					<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover"></div>
+					<div class="name"><span>nome do produto: </span>${object.name}</div>
+					<div class="description"><span>descrição: </span>${object.description}</div>
+					<div class="price"><span>preço:</span>${object.price}</div>
+					<div class="price-discount"><span>preço de desconto:</span>${object.discount_price}</div>
+					<div class="prateleira"><span>prateleira: </span>${object.featured}</div>
+					<div class="actions">
+						<a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
+						<a class="btn btn-danger" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
+					</div>
+				</div>
+			</c:forEach>
 		</div>
-		<div class="search-right"></div>
     </div>
 </jsp:body>
 </template:admin>

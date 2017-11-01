@@ -17,6 +17,10 @@
 
 .products-admin {
   padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .products-admin .search {
   background: white;
@@ -59,6 +63,55 @@
 }
 .products-admin .products-wrapper {
   margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1.5em;
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.products-admin .products-wrapper .product {
+  width: 100%;
+  height: 320px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40% 9% 9% 9% 9% 9% 15%;
+  padding: 15px;
+  background-color: rgba(236, 236, 236, 0.67);
+}
+.products-admin .products-wrapper .product .image {
+  background: url("http://www-scf.usc.edu/~yutonggu/img/300X200.gif") center center no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 10px;
+}
+.products-admin .products-wrapper .product .name span {
+  font-weight: 500;
+}
+.products-admin .products-wrapper .product .description span {
+  font-weight: 500;
+}
+.products-admin .products-wrapper .product .price span {
+  font-weight: 500;
+}
+.products-admin .products-wrapper .product .price-discount span {
+  font-weight: 500;
+}
+.products-admin .products-wrapper .product .prateleira span {
+  font-weight: 500;
+}
+.products-admin .products-wrapper .product .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.products-admin .pagination {
+  height: 100px;
 }
 
 * {
