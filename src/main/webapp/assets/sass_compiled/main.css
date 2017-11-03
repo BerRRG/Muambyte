@@ -65,7 +65,7 @@
   margin-top: 20px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 250px);
   grid-template-rows: auto;
   grid-column-gap: 1.5em;
   grid-row-gap: 1.5em;
@@ -89,8 +89,18 @@
   background-size: 100% 100%;
   margin-bottom: 10px;
 }
+.products-admin .products-wrapper .product .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .products-admin .products-wrapper .product .name span {
   font-weight: 500;
+}
+.products-admin .products-wrapper .product .description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .products-admin .products-wrapper .product .description span {
   font-weight: 500;
