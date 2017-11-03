@@ -17,7 +17,6 @@
   <!-- style -->
    <link rel="stylesheet" href="<c:url value='/assets/sass_compiled/main.css'/>">
    <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
-   <link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
    <jsp:invoke fragment="extraStyles"/>
 </head>
 

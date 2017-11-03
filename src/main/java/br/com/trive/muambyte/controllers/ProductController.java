@@ -80,6 +80,22 @@ public class ProductController
       return "redirect:/admin/product";
    }
 
+   @GetMapping("/disable/{id}")
+   public String disable(@PathVariable("id") Integer id)
+   {
+      Product product = productDao.findById(id);
+      
+      if (product.getDisable() == false ) {
+    	  product.setDisable(true);
+      } else {
+    	  product.setDisable(false);
+      }
+      
+      productDao.update(product);
+
+      return "redirect:/admin/product";
+   }
+
    @PostMapping("/{id}")
    public ModelAndView update(@PathVariable("id") Integer id, @Valid Product product, BindingResult bindingResult)
    {

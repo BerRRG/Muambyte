@@ -20,7 +20,7 @@
 <link rel="stylesheet"
 	href="<c:url value='/assets/sass_compiled/main.css'/>">
 <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
-<link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
+
 </head>
 
 <body>
@@ -71,7 +71,7 @@
 			</div>
 
 			<div class="sidebar-footer">
-				<span class="copyright">Copyright Oficial Trive</span> <span
+				<span class="copyright">Copyright Oficial Trive</s	pan> <span
 					class="version">Version 1.0.0</span>
 			</div>
 

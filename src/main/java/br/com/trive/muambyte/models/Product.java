@@ -21,6 +21,7 @@ public class Product
    private BigDecimal price;
    private BigDecimal discount_price;
    private Boolean featured;
+   private Boolean disable;
    private String image;
    @ManyToOne
    private Category category;
@@ -89,7 +90,15 @@ public class Product
 	
 	public void setFeatured(Boolean featured) {
 		this.featured = featured;
-}
+    }
+
+  public Boolean getDisable() {
+		return disable;
+	}
+	
+	public void setDisable(Boolean disable) {
+		this.disable = disable;
+  }
 
 	public String getImage() {
 		return image;
