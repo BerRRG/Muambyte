@@ -14,7 +14,7 @@
 			Produtos
 		</div>
 		<div class="action">
-			<a href="<c:url value='/admin/product/form'/>" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Adicionar novo produto</a>
+			<a href="<c:url value='/admin/product/form'/>" class="btn btn-primary"><i class="icon-plus"></i> &nbsp;&nbsp;Adicionar novo produto</a>
 		</div>
 	</div>
     <div class="products-admin">
