@@ -1,0 +1,48 @@
+.category-admin {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .categories {
+        margin-top: 20px;
+        width: 800px;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .table {
+            background: white;
+
+            .id {
+                max-width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .name {
+                max-width: 250px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .description {
+                max-width: 250px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .btn-category {
+                width: 40px;
+                height: 30px;
+                padding: 3px 10px;
+            }
+        }
+    }
+}

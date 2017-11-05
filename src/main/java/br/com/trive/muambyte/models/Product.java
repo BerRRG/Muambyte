@@ -21,7 +21,7 @@ public class Product
    private BigDecimal price;
    private BigDecimal discount_price;
    private Boolean featured;
-   private Boolean disable;
+   private Boolean disable = false;
    private String image;
    @ManyToOne
    private Category category;

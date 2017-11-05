@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 @import 'partials/product-admin';
+@import 'partials/category-admin';
 @import 'partials/forms';
 
 * {
@@ -23,6 +24,71 @@
     
     &:hover { background-color: rgba(128, 128, 128, 0.2); }
 }
+
+.header {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(216, 216, 216, 0.67);
+
+    .title {
+        font-size: 36px;
+        font-weight: 400;
+    }
+
+    .action {
+        font-size: 14px;
+    }
+}
+
+
+.search {
+	background: white;
+	height: 50px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 430px;
+	padding: 3px 3px 3px 15px;
+
+	i {
+		width: 8%;
+	}
+
+	input {
+		width: 72%;
+		height: 100%;
+		border: none;
+		outline: none;
+	}
+
+	.btn-search {
+		width: 20%;
+		height: 100%;
+		background-color: rgba(0, 26, 141, 0.67);
+		color: white !important;
+		text-decoration: none;
+		border: none;
+		outline: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-weight: 500;
+		border-radius: 2px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(0, 26, 141, 0.6);
+			border: none;
+			outline: none;
+			color: white;
+		}
+	}
+}
+
 
 .grid-system {
 	display: grid;

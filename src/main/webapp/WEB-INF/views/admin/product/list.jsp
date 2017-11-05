@@ -20,7 +20,7 @@
     <div class="products-admin">
 		<div class="search">
 			<i class="icon-magnifier"></i>
-			<input placeholder="Digite o nome do produto aqui..."></input>
+			<input placeholder="Digite o nome da categoria aqui..."></input>
 			<a class="btn-search">Buscar</a>
 		</div>
 		
