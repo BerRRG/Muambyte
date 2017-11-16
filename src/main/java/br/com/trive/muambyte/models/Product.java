@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import br.com.trive.muambyte.models.Category;
@@ -21,6 +22,7 @@ public class Product
    private BigDecimal price;
    private BigDecimal discount_price;
    private Boolean featured;
+   @NotNull
    private Boolean disable = false;
    private String image;
    @ManyToOne

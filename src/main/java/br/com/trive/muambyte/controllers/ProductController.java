@@ -85,7 +85,7 @@ public class ProductController
    {
       Product product = productDao.findById(id);
       
-      if (product.getDisable() == false ) {
+      if (!product.getDisable()) {
     	  product.setDisable(true);
       } else {
     	  product.setDisable(false);

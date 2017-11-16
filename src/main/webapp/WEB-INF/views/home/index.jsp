@@ -1,53 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
-*{
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-}
-.grid-system{
-	width: 100vw;
-	height: 100vh;
-	grid-template-columns: 1fr;
-	grid-template-rows: 20vh 65vh 15vh;
-}
-.header {
-	background-color: rgba(0,0,0, 0.8);
-}
-main {
-	background-color: rgba(0,0,0, 0.3);
-}
-footer {
-	background-color: rgba(0,0,0, 0.8);
-}
 </style>
 <title>Muambyte</title>
+<!-- bootstrap -->
+<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/assets/css/font-awesome.min.css'/>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"/>
+
+<!-- style -->
+ <link rel="stylesheet" href="<c:url value='/assets/sass_compiled/main.css'/>">
+ <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
+ 
 </head>
 <body>
-	<div class="grid-system">
-		<header class="header">
-			<div class="navbar-principal">
-				<div class="logo">logo</div>
-				<div class="contact">contato</div>
-				<div class="search">search</div>
-				<div class="register">registrar</div>
-				<div class="login">logar</div>
-				<div class="cart">carrinho</div>
-			</div>
-			<div class="navbar-secundaria">
-				<div class="dropdown">
-					<a class="link-menu">item</a>
-					<div class="dropdown-content">
-						<span>sub item</span>
-					</div>
+	<div class="grid-home">
+		<header class="header-home">
+			<nav class="navbar-default">
+				<div class="items-left">
+					<div class="item logo"></div>
+					<div class="item contato"><a href="#">CONTATO</a></div>
 				</div>
-	
-			</div>
+				<div class="items-middle">
+					<div class="nav-search">SEARCH</div>
+				</div>
+				<div class="items-right">
+					<div class="item register"><a href="/account/register">REGISTRAR</a></div>
+					<div class="item shopping-cart"><a href="#"><i class="icon-basket"></i></a></div>
+				</div>
+			</nav>
 		</header>
 		<main>
 		<div></div>
