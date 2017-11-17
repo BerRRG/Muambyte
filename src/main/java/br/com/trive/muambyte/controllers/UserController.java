@@ -43,7 +43,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -57,8 +57,8 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "welcome";
-    }
+//    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+//    public String welcome(Model model) {
+//        return "welcome";
+//    }
 }

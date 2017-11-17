@@ -19,6 +19,11 @@ public class ProductDao
    {
       return manager.createQuery("select p from Product p", Product.class).getResultList();
    }
+   
+   public List<Product> getFeatured()
+   {
+	   return manager.createQuery("select p from Product p where p.featured = 1", Product.class).getResultList();	   
+   }
 
    public void save(Product product)
    {
@@ -44,5 +49,9 @@ public class ProductDao
    {
       return new PaginatorQueryHelper().list(manager, Product.class, page, max);
    }
-
+   
+   public PaginatedList FeaturedPaginated (int page, int max)
+   {
+	   return new PaginatorQueryHelper().featuredList(manager, Product.class, page, max);
+   }
 }

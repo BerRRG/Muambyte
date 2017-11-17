@@ -39,6 +39,39 @@
 		<main>
 		<div></div>
 
+
+	<div class="header">
+		<div class="title">
+			Produtos
+		</div>
+	</div>
+    <div class="products-admin">
+		<div class="search">
+			<i class="icon-magnifier"></i>
+			<input placeholder="Digite o nome da categoria aqui..."></input>
+			<a class="btn-search">Buscar</a>
+		</div>
+		
+		<div class="products-wrapper">
+			<c:forEach items='${paginatedList.currentList}' var='object'>
+				<div class="product">
+					<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover; background-size: 100% 100%;"></div>
+					<div class="name"><span>${object.name}</span></div>
+					<div class="description"><span>descrição: </span>${object.description}</div>
+					<div class="price"><span>preço: </span>${object.price}</div>
+					<div class="price-discount"><span>desconto: </span>${object.discount_price}</div>
+					<div class="prateleira"><span>categoria: </span>${object.category.name}</div>
+					<div class="actions">
+						<a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
+						<a class="${object.disable ? 'btn btn-success' : 'btn btn-danger'}" href="<c:url value='/admin/product/disable'/>/${object.id}"><i class="${object.disable ? 'icon-power' : 'icon-ban'}"></i></a>
+						<a class="btn btn-danger remove" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+    </div>
+
+
 		</main>
 		<footer></footer>
 	</div>
