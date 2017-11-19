@@ -61,11 +61,6 @@
 					<div class="price"><span>preço: </span>${object.price}</div>
 					<div class="price-discount"><span>desconto: </span>${object.discount_price}</div>
 					<div class="prateleira"><span>categoria: </span>${object.category.name}</div>
-					<div class="actions">
-						<a class="btn btn-primary" href="<c:url value='/admin/product'/>/${object.id}"><i class="icon-pencil"></i></a>
-						<a class="${object.disable ? 'btn btn-success' : 'btn btn-danger'}" href="<c:url value='/admin/product/disable'/>/${object.id}"><i class="${object.disable ? 'icon-power' : 'icon-ban'}"></i></a>
-						<a class="btn btn-danger remove" href="<c:url value='/admin/product/remove'/>/${object.id}"><i class="icon-trash"></i></a>
-					</div>
 				</div>
 			</c:forEach>
 		</div>

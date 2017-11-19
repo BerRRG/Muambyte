@@ -25,7 +25,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/resources/**", "/registration").permitAll()
+                    .antMatchers(
+                    		"/resources/**",
+                    		"/registration",
+                    		"/",
+                    		"/assets/css/bootstrap.min.css",
+                    		"/assets/css/bootstrap-theme.min.css",
+                    		"/assets/css/font-awesome.min.css",
+                    		"/assets/sass_compiled/main.css",
+                    		"/assets/css/index.css"
+                    		).permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
