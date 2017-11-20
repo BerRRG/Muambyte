@@ -18,8 +18,7 @@ public class PaginationResult<E> {
    private int maxNavigationPage;
  
    private List<Integer> navigationPages;
- 
-   // @page: 1, 2, ..
+
    public PaginationResult(Query query, int page, int maxResult, int maxNavigationPage) {
        final int pageIndex = page - 1 < 0 ? 0 : page - 1;
  
@@ -45,10 +44,10 @@ public class PaginationResult<E> {
                        && resultScroll.getRowNumber() < maxRecordIndex);
  
            }
-           // Go to last record.
+
            resultScroll.last();
        }
-       // Total records.
+
        this.totalRecords = resultScroll.getRowNumber() + 1;
        this.currentPage = pageIndex + 1;
        this.list = results;
@@ -73,10 +72,9 @@ public class PaginationResult<E> {
        int begin = current - this.maxNavigationPage / 2;
        int end = current + this.maxNavigationPage / 2;
  
-       // First page
+
        navigationPages.add(1);
        if (begin > 2) {
-           // For '...'
            navigationPages.add(-1);
        }
  
@@ -87,10 +85,8 @@ public class PaginationResult<E> {
        }
  
        if (end < this.totalPages - 2) {
-           // For '...'
            navigationPages.add(-1);
        }
-       // Last page.
        navigationPages.add(this.totalPages);
    }
  
