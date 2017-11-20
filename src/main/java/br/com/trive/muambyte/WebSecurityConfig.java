@@ -28,6 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers(
                     		"/resources/**",
                     		"/registration",
+                    		"/buyProduct",
+                    		"/shoppingCart",
                     		"/",
                     		"/assets/css/bootstrap.min.css",
                     		"/assets/css/bootstrap-theme.min.css",
