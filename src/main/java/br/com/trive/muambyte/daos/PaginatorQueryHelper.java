@@ -73,7 +73,7 @@ public class PaginatorQueryHelper
 	      }
 
 	      TypedQuery<T> listQuery = manager.createQuery(
-	            "select o from " + klass.getSimpleName() + " o where featured = 1", klass);
+	            "select o from " + klass.getSimpleName() + " o where featured = 1 and disable = false", klass);
 
 	      TypedQuery<Number> countQuery = manager.createQuery(
 	            "select count(1) from " + klass.getSimpleName() + " o",

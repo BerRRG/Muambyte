@@ -1,0 +1,102 @@
+.carrousel-products {
+    width: 100%;
+    max-width: 100vw;
+    margin-top: 30px;
+    padding: 0 0px 0px 30px;
+
+    h1 {
+      font-size: 30px;  
+
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 9px;
+    }
+    
+    ::-webkit-scrollbar-track { background: transparent; }
+        
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(49, 49, 49, 0.3);
+        border-radius: 2px;
+        
+        &:hover { background-color: rgba(49, 49, 49, 0.3);  }
+    }
+
+    .carrousel-wrapper {
+        max-width: 100%;
+        height: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0px;
+        
+
+        .product {
+            width: 300px;
+            min-width: 300px;
+            height: 320px;
+            border: 1px solid rgba(0,0,0, 0.3);
+            border-radius: 2px;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 49% 9% 18% 9% 15%;
+            padding: 15px 15px 15px 15px;
+            background-color: rgba(236, 236, 236, 0.67);
+            margin-right: 10px;
+
+            .image {
+                background: url("http://www-scf.usc.edu/~yutonggu/img/300X200.gif") center center no-repeat;
+                background-size: 100% 100%;
+                margin-bottom: 10px;
+            }
+
+            .name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                span {
+                font-weight: 500;
+                }
+
+            } 
+
+            .description {
+                // white-space: nowrap;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+
+                span {
+                font-weight: 500;
+                }
+
+            }
+
+            .price {
+                span {
+                font-weight: 500;
+                }
+
+            }
+
+            .price-discount {
+                span {
+                font-weight: 500;
+                }
+
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+            }
+        }
+    }
+}

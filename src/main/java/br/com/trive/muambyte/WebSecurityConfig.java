@@ -31,6 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     		"/",
                     		"/assets/css/bootstrap.min.css",
                     		"/assets/css/bootstrap-theme.min.css",
+                    		"/assets/js/jquery-2.1.4.min.js",
+                    		"/assets/js/bootstrap.min.js",
+                    		"/assets/css/bootstrap-theme.min.css",
                     		"/assets/css/font-awesome.min.css",
                     		"/assets/sass_compiled/main.css",
                     		"/assets/css/index.css"
