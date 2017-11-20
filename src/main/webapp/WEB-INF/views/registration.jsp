@@ -39,7 +39,41 @@
                 <form:errors path="username"></form:errors>
             </div>
         </spring:bind>
-
+        <spring:bind path="name">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="name" class="form-control" placeholder="Nome"
+                            autofocus="true"></form:input>
+                <form:errors path="name"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="address">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="address" class="form-control" placeholder="Endereço"
+                            autofocus="true"></form:input>
+                <form:errors path="address"></form:errors>
+            </div>
+        </spring:bind>
+                <spring:bind path="cpf">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="cpf" class="form-control" placeholder="CPF"
+                            autofocus="true"></form:input>
+                <form:errors path="cpf"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="email">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="email" class="form-control" placeholder="E-mail"
+                            autofocus="true"></form:input>
+                <form:errors path="email"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="phone">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="phone" class="form-control" placeholder="Telefone"
+                            autofocus="true"></form:input>
+                <form:errors path="phone"></form:errors>
+            </div>
+        </spring:bind>
         <spring:bind path="password">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>

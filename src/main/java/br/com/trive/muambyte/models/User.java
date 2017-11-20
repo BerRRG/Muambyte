@@ -10,7 +10,12 @@ public class User {
     private String username;
     private String password;
     private String passwordConfirm;
+    private String name;
+    private String cpf;
+    private String email;
     private Set<Role> roles;
+    private String address;
+    private Integer phone;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +23,47 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Integer getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Integer phone) {
+		this.phone = phone;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 
