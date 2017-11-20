@@ -114,7 +114,7 @@
 			<div class="products-home">
 				<h1>Todos os produtos</h1>
 				<div class="products-wrapper">
-					<c:forEach items='${paginatedList.currentList}' var='object'>
+					<c:forEach items='${paginated.currentList}' var='object'>
 						<div class="product">
 							<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover; background-size: 100% 100%;"></div>
 							<div class="name">

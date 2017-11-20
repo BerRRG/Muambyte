@@ -39,6 +39,7 @@ public class HomeController
    {
       ModelAndView modelAndView = new ModelAndView("home/index");
       modelAndView.addObject("paginatedList", productDao.FeaturedPaginated(page, 10));
+      modelAndView.addObject("paginated", productDao.paginated(page, 10));
       return modelAndView;
    }
 	
