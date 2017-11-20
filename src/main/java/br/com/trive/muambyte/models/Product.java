@@ -1,5 +1,7 @@
 package br.com.trive.muambyte.models;
 
+import javax.persistence.Column;
+
 //import java.io.Serializable;
 //import java.math.BigDecimal;
 //import java.util.Date;
@@ -143,9 +145,10 @@ public class Product
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer id;
+   private String code;
    private String name;
    private String description;
-   private BigDecimal price;
+   private double price;
    private BigDecimal discount_price;
    private Boolean featured;
    @NotNull
@@ -184,12 +187,12 @@ public class Product
       this.description = description;
    }
 
-   public BigDecimal getPrice()
+   public double getPrice()
    {
       return this.price;
    }
 
-   public void setPrice(BigDecimal price)
+   public void setPrice(double price)
    {
       this.price = price;
    }
@@ -235,4 +238,16 @@ public class Product
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	
+  @Column(name = "Code", length = 20, nullable = false)
+  public String getCode() {
+      return code;
+  }
+
+  public void setCode(String code) {
+      this.code = code;
+  }
+	
+	
 }
