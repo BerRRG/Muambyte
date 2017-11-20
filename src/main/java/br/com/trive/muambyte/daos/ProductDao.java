@@ -21,7 +21,7 @@ public class ProductDao
 {
 
     @Autowired
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 	
 	
    @PersistenceContext
@@ -73,15 +73,15 @@ public class ProductDao
        crit.add(Restrictions.eq("code", code));
        return (Product) crit.uniqueResult();
    }
-   
-   public static Session getSession() throws HibernateException {         
-	   Session sess = null;       
-	   try {         
-	       sess = sessionFactory.getCurrentSession();  
-	   } catch (org.hibernate.HibernateException he) {  
-	       sess = sessionFactory.openSession();     
-	   }             
-	   return sess;
-	} 
+//   
+//   public static Session getSession() throws HibernateException {         
+//	   Session sess = null;       
+//	   try {         
+//	       sess = sessionFactory.getCurrentSession();  
+//	   } catch (org.hibernate.HibernateException he) {  
+//	       sess = sessionFactory.openSession();     
+//	   }             
+//	   return sess;
+//	} 
    
 }

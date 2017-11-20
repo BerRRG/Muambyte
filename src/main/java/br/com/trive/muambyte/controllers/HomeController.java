@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.trive.muambyte.daos.OrderDao;
 import br.com.trive.muambyte.daos.ProductDao;
 import br.com.trive.muambyte.models.CartInfo;
 import br.com.trive.muambyte.models.CustomerInfo;
@@ -29,6 +30,10 @@ public class HomeController
    @Autowired
    private ProductDao productDao;
 
+   @Autowired
+   private OrderDao orderDao;
+
+   
    @GetMapping("/")
    public ModelAndView list(@RequestParam(defaultValue = "0", required = false) int page)
    {
@@ -140,65 +145,55 @@ public class HomeController
        return "redirect:/shoppingCartConfirmation";
    }
 
-//   // GET: Review Cart to confirm.
-//   @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.GET)
-//   public String shoppingCartConfirmationReview(HttpServletRequest request, Model model) {
-//       CartInfo cartInfo = Utils.getCartInSession(request);
-//
-//       // Cart have no products.
-//       if (cartInfo.isEmpty()) {
-//           // Redirect to shoppingCart page.
-//           return "redirect:/shoppingCart";
-//       } else if (!cartInfo.isValidCustomer()) {
-//           // Enter customer info.
-//           return "redirect:/shoppingCartCustomer";
-//       }
-//
-//       return "shoppingCartConfirmation";
-//   }
-//
-//   // POST: Send Cart (Save).
-//   @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.POST)
-//   // Avoid UnexpectedRollbackException (See more explanations)
-//   @Transactional(propagation = Propagation.NEVER)
-//   public String shoppingCartConfirmationSave(HttpServletRequest request, Model model) {
-//       CartInfo cartInfo = Utils.getCartInSession(request);
-//
-//       // Cart have no products.
-//       if (cartInfo.isEmpty()) {
-//           // Redirect to shoppingCart page.
-//           return "redirect:/shoppingCart";
-//       } else if (!cartInfo.isValidCustomer()) {
-//           // Enter customer info.
-//           return "redirect:/shoppingCartCustomer";
-//       }
-//       try {
-//           orderDao.saveOrder(cartInfo);
-//       } catch (Exception e) {
-//           // Need: Propagation.NEVER?
-//           return "shoppingCartConfirmation";
-//       }
-//       // Remove Cart In Session.
-//       Utils.removeCartInSession(request);
-//        
-//       // Store Last ordered cart to Session.
-//       Utils.storeLastOrderedCartInSession(request, cartInfo);
-//
-//       // Redirect to successful page.
-//       return "redirect:/shoppingCartFinalize";
-//   }
-//
-//   @RequestMapping(value = { "/shoppingCartFinalize" }, method = RequestMethod.GET)
-//   public String shoppingCartFinalize(HttpServletRequest request, Model model) {
-//
-//       CartInfo lastOrderedCart = Utils.getLastOrderedCartInSession(request);
-//
-//       if (lastOrderedCart == null) {
-//           return "redirect:/shoppingCart";
-//       }
-//
-//       return "shoppingCartFinalize";
-//   }
+   // GET: Review Cart to confirm.
+   @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.GET)
+   public String shoppingCartConfirmationReview(HttpServletRequest request, Model model) {
+       CartInfo cartInfo = Utils.getCartInSession(request);
+
+       // Cart have no products.
+       if (cartInfo.isEmpty()) {
+           // Redirect to shoppingCart page.
+           return "redirect:/shoppingCart";
+       } else if (!cartInfo.isValidCustomer()) {
+           // Enter customer info.
+           return "redirect:/shoppingCartCustomer";
+       }
+
+       return "shoppingCartConfirmation";
+   }
+
+   @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.POST)
+   public String shoppingCartConfirmationSave(HttpServletRequest request, Model model) {
+       CartInfo cartInfo = Utils.getCartInSession(request);
+
+       if (cartInfo.isEmpty()) {
+           return "redirect:/shoppingCart";
+       } else if (!cartInfo.isValidCustomer()) {
+           return "redirect:/shoppingCartCustomer";
+       }
+       try {
+           orderDao.saveOrder(cartInfo);
+       } catch (Exception e) {
+           return "shoppingCartConfirmation";
+       }
+       Utils.removeCartInSession(request);
+        
+       Utils.storeLastOrderedCartInSession(request, cartInfo);
+
+       return "redirect:/shoppingCartFinalize";
+   }
+
+   @RequestMapping(value = { "/shoppingCartFinalize" }, method = RequestMethod.GET)
+   public String shoppingCartFinalize(HttpServletRequest request, Model model) {
+
+       CartInfo lastOrderedCart = Utils.getLastOrderedCartInSession(request);
+
+       if (lastOrderedCart == null) {
+           return "redirect:/shoppingCart";
+       }
+
+       return "shoppingCartFinalize";
+   }
    
    
    
