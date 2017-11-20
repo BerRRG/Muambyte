@@ -37,7 +37,7 @@
 						</div>
 						<div class="items-right">
 							<div class="item register">
-								<a href="/account/register">REGISTRAR</a>
+								<a href="/registration">REGISTRAR</a>
 							</div>
 							<div class="item shopping-cart">
 								<a href="#">
@@ -103,7 +103,7 @@
 									</c:choose>
 
 									<div class="actions">
-										<a class="btn btn-primary" href="<c:url value='/buyProduct?code=${object.id}">Adicionar ao carrinho</a>
+										<a class="btn btn-primary" href="/buyProduct?code=${object.id}">Adicionar ao carrinho</a>
 									</div>
 								</div>
 							</c:forEach>
