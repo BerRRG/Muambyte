@@ -39,6 +39,34 @@
 		<main>
 		<div></div>
 
+
+	<div class="header">
+		<div class="title">
+			Produtos
+		</div>
+	</div>
+    <div class="products-admin">
+		<div class="search">
+			<i class="icon-magnifier"></i>
+			<input placeholder="Digite o nome da categoria aqui..."></input>
+			<a class="btn-search">Buscar</a>
+		</div>
+		
+		<div class="products-wrapper">
+			<c:forEach items='${paginatedList.currentList}' var='object'>
+				<div class="product">
+					<div class="image" style="background: url(${object.image}) center center no-repeat; background-size: cover; background-size: 100% 100%;"></div>
+					<div class="name"><span>${object.name}</span></div>
+					<div class="description"><span>descrição: </span>${object.description}</div>
+					<div class="price"><span>preço: </span>${object.price}</div>
+					<div class="price-discount"><span>desconto: </span>${object.discount_price}</div>
+					<div class="prateleira"><span>categoria: </span>${object.category.name}</div>
+				</div>
+			</c:forEach>
+		</div>
+    </div>
+
+
 		</main>
 		<footer></footer>
 	</div>

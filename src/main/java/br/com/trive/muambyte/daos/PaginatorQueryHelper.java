@@ -62,4 +62,23 @@ public class PaginatorQueryHelper
 
       return list(listQuery, countQuery, currentPage, max);
    }
+   
+   public <T> PaginatedList featuredList(EntityManager manager, Class<T> klass,
+	         int currentPage, int max)
+	   {
+
+	      if (!klass.isAnnotationPresent(Entity.class))
+	      {
+	         throw new IllegalArgumentException("Your entity is not annotated with @Entity");
+	      }
+
+	      TypedQuery<T> listQuery = manager.createQuery(
+	            "select o from " + klass.getSimpleName() + " o where featured = 1", klass);
+
+	      TypedQuery<Number> countQuery = manager.createQuery(
+	            "select count(1) from " + klass.getSimpleName() + " o",
+	            Number.class);
+
+	      return list(listQuery, countQuery, currentPage, max);
+	   }
 }
