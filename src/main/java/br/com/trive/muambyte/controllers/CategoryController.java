@@ -60,7 +60,6 @@ public class CategoryController
       return modelAndView;
    }
 
-   //just because get is easier here. Be my guest if you want to change.
    @GetMapping("/remove/{id}")
    public String remove(@PathVariable("id") Integer id)
    {
