@@ -2,10 +2,13 @@ package br.com.trive.muambyte.models;
 
 import java.io.Serializable;
 import java.util.Date;
- 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.Id;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
  
@@ -22,7 +25,17 @@ public class Order implements Serializable {
     private double amount;
  
     private String customerName;
-    private String customerAddress;
+    private String userName;
+    
+    public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	private String customerAddress;
     private String customerEmail;
     private String customerPhone;
  
@@ -97,6 +110,5 @@ public class Order implements Serializable {
  
     public void setCustomerPhone(String customerPhone) {
         this.customerPhone = customerPhone;
-    }
-    
+    }    
 }

@@ -107,11 +107,9 @@ public class HomeController
    public String shoppingCartCustomerForm(HttpServletRequest request, Model model) {
 
        CartInfo cartInfo = Utils.getCartInSession(request);
-     
-       // Cart is empty.
+
        if (cartInfo.isEmpty()) {
             
-           // Redirect to shoppingCart page.
            return "redirect:/shoppingCart";
        }
 
@@ -146,17 +144,15 @@ public class HomeController
        return "redirect:/shoppingCartConfirmation";
    }
 
-   // GET: Review Cart to confirm.
    @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.GET)
    public String shoppingCartConfirmationReview(HttpServletRequest request, Model model) {
        CartInfo cartInfo = Utils.getCartInSession(request);
 
-       // Cart have no products.
        if (cartInfo.isEmpty()) {
-           // Redirect to shoppingCart page.
+
            return "redirect:/shoppingCart";
        } else if (!cartInfo.isValidCustomer()) {
-           // Enter customer info.
+
            return "redirect:/shoppingCartCustomer";
        }
 
@@ -196,6 +192,14 @@ public class HomeController
        return "shoppingCartFinalize";
    }
    
+//   @GetMapping("/orders")
+//   public ModelAndView listOrders(@RequestParam(defaultValue = "0", required = false) int page)
+//   {
+//      ModelAndView modelAndView = new ModelAndView("orders");
+//      OrderDao order = new OrderDao();
+//      modelAndView.addObject("paginated", order.findOrderByUserName("bernardorg22"));
+//      return modelAndView;
+//   }
    
    
 }

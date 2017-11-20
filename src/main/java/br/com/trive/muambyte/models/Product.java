@@ -147,7 +147,16 @@ public class Product
    private Integer id;
    private String code;
    private String name;
-   private String description;
+   private Integer stock;
+   public Integer getStock() {
+	return stock;
+}
+
+public void setStock(Integer stock) {
+	this.stock = stock;
+}
+
+private String description;
    private double price;
    private BigDecimal discount_price;
    private Boolean featured;

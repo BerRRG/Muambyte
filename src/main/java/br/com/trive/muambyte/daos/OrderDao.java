@@ -3,7 +3,10 @@ package br.com.trive.muambyte.daos;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
- 
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -11,6 +14,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +33,9 @@ import br.com.trive.muambyte.models.Product;
 @Repository
 public class OrderDao{
  
+   @PersistenceContext
+   private EntityManager manager;
+	   
     @Autowired
     private  SessionFactory sessionFactory;
  
@@ -56,7 +64,10 @@ public class OrderDao{
         order.setOrderDate(new Date());
         order.setAmount(cartInfo.getAmountTotal());
  
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        
         CustomerInfo customerInfo = cartInfo.getCustomerInfo();
+        order.setUserName(auth.getName());
         order.setCustomerName(customerInfo.getName());
         order.setCustomerEmail(customerInfo.getEmail());
         order.setCustomerPhone(customerInfo.getPhone());
@@ -76,6 +87,11 @@ public class OrderDao{
  
             Integer code = Integer.parseInt(line.getProductInfo().getCode());
             Product product = this.productDao.findById(code);
+            if (product.getId() instanceof Integer && product !=null) {
+            	product.setStock(product.getStock() - line.getQuantity());
+            	productDao.save(product);
+            }
+            
             detail.setProduct(product);
  
             session.persist(detail);
@@ -127,7 +143,8 @@ public class OrderDao{
  
         return query.list();
     }
- 
+
+    
 //    public static Session getSession() throws HibernateException {         
 // 	   Session sess = null;       
 // 	   try {         

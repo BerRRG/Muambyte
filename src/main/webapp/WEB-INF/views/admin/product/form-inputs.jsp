@@ -19,6 +19,13 @@
 </div>
 
 <div class="form-group">
+	<label for="description" >Estoque</label>
+	<form:input path='stock' type="text" class="form-control" id="description" aria-describedby="stockHelp" placeholder="Digite valor em estoque" />
+	<form:errors path='stock' />
+	<small id="stocknHelp" class="form-text text-muted">Ex:123.</small>
+</div>
+
+<div class="form-group">
 	<label for="price" >Preço de venda</label>
 	<form:input path='price' type="number" class="form-control" id="price" aria-describedby="priceHelp" placeholder="Digite o preço de venda do produto, Ex: 1600..." />
 	<form:errors path='price' />
