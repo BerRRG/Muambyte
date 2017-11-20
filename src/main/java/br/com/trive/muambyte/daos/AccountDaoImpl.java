@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.trive.muambyte.models.User;
  
-// Transactional for Hibernate
 @Transactional
 public class AccountDaoImpl implements AccountDao {
     

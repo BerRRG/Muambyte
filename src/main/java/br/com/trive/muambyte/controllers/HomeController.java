@@ -47,20 +47,17 @@ public class HomeController
        }
        if (product != null) {
 
-           // Cart info stored in Session.
            CartInfo cartInfo = Utils.getCartInSession(request);
 
            ProductInfo productInfo = new ProductInfo(product);
 
            cartInfo.addProduct(productInfo, 1);
        }
-       // Redirect to shoppingCart page.
        return "redirect:/shoppingCart";
    }
    
    
-   
-   // POST: Update quantity of products in cart.
+
    @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.POST)
    public String shoppingCartUpdateQty(HttpServletRequest request, //
            Model model, //
@@ -69,11 +66,9 @@ public class HomeController
        CartInfo cartInfo = Utils.getCartInSession(request);
        cartInfo.updateQuantity(cartForm);
 
-       // Redirect to shoppingCart page.
        return "redirect:/shoppingCart";
    }
 
-   // GET: Show Cart
    @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.GET)
    public String shoppingCartHandler(HttpServletRequest request, Model model) {
        CartInfo myCart = Utils.getCartInSession(request);
@@ -91,7 +86,6 @@ public class HomeController
        }
        if (product != null) {
 
-           // Cart Info stored in Session.
            CartInfo cartInfo = Utils.getCartInSession(request);
 
            ProductInfo productInfo = new ProductInfo(product);
@@ -99,10 +93,10 @@ public class HomeController
            cartInfo.removeProduct(productInfo);
 
        }
-       // Redirect to shoppingCart page.
+
        return "redirect:/shoppingCart";
    }
-   // GET: Enter customer information.
+
    @RequestMapping(value = { "/shoppingCartCustomer" }, method = RequestMethod.GET)
    public String shoppingCartCustomerForm(HttpServletRequest request, Model model) {
 
@@ -125,7 +119,6 @@ public class HomeController
        return "shoppingCartCustomer";
    }
 
-   // POST: Save customer information.
    @RequestMapping(value = { "/shoppingCartCustomer" }, method = RequestMethod.POST)
    public String shoppingCartCustomerSave(HttpServletRequest request, //
            Model model, //
@@ -133,10 +126,9 @@ public class HomeController
            BindingResult result, //
            final RedirectAttributes redirectAttributes) {
  
-       // If has Errors.
        if (result.hasErrors()) {
            customerForm.setValid(false);
-           // Forward to reenter customer info.
+
            return "shoppingCartCustomer";
        }
 
@@ -145,7 +137,6 @@ public class HomeController
 
        cartInfo.setCustomerInfo(customerForm);
 
-       // Redirect to Confirmation page.
        return "redirect:/shoppingCartConfirmation";
    }
 

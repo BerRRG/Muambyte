@@ -240,9 +240,9 @@ public class Product
 	}
 	
 	
-  @Column(name = "Code", length = 20, nullable = false)
+  @Column(name = "Code", length = 20, nullable = true)
   public String getCode() {
-      return code;
+      return Integer.toString(id);
   }
 
   public void setCode(String code) {
