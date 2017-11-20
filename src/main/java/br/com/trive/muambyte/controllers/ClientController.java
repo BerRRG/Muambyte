@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.trive.muambyte.daos.ClientDao;
-import br.com.trive.muambyte.models.Client;
+import br.com.trive.muambyte.models.User;
 
 @Controller
 @RequestMapping("admin/client")
@@ -26,7 +26,7 @@ public class ClientController
    private ClientDao clientDao;
 
    @GetMapping("/form")
-   public ModelAndView form(Client client)
+   public ModelAndView form(User client)
    {
       ModelAndView modelAndView = new ModelAndView("admin/client/form-add");
       return modelAndView;
@@ -34,7 +34,7 @@ public class ClientController
    }
    
    @PostMapping
-   public ModelAndView save(@Valid Client client, BindingResult bindingResult)
+   public ModelAndView save(@Valid User client, BindingResult bindingResult)
    {
       if (bindingResult.hasErrors())
       {
@@ -46,7 +46,7 @@ public class ClientController
    }
 
    @GetMapping("/{id}")
-   public ModelAndView load(@PathVariable("id") Integer id)
+   public ModelAndView load(@PathVariable("id") Long id)
    {
       ModelAndView modelAndView = new ModelAndView("admin/client/form-update");
       modelAndView.addObject("client", clientDao.findById(id));
@@ -63,15 +63,15 @@ public class ClientController
 
    //just because get is easier here. Be my guest if you want to change.
    @GetMapping("/remove/{id}")
-   public String remove(@PathVariable("id") Integer id)
+   public String remove(@PathVariable("id") Long id)
    {
-      Client client = clientDao.findById(id);
+      User client = clientDao.findById(id);
       clientDao.remove(client);
       return "redirect:/admin/client";
    }
 
    @PostMapping("/{id}")
-   public ModelAndView update(@PathVariable("id") Integer id, @Valid Client client, BindingResult bindingResult)
+   public ModelAndView update(@PathVariable("id") Long id, @Valid User client, BindingResult bindingResult)
    {
       client.setId(id);
       if (bindingResult.hasErrors())
