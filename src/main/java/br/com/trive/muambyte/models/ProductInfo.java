@@ -9,7 +9,6 @@ public class ProductInfo {
  
     private boolean newProduct=false;
  
-    // Upload file.
     private CommonsMultipartFile fileData;
  
     public ProductInfo() {

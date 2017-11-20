@@ -79,10 +79,10 @@ public class HomeController
 
    @RequestMapping({ "/shoppingCartRemoveProduct" })
    public String removeProductHandler(HttpServletRequest request, Model model, //
-           @RequestParam(value = "code", defaultValue = "") String code) {
+           @RequestParam(value = "code", defaultValue = "") Integer code) {
        Product product = null;
-       if (code != null && code.length() > 0) {
-           product = productDao.findProduct(code);
+       if (code != null) {
+           product = productDao.findById(code);
        }
        if (product != null) {
 

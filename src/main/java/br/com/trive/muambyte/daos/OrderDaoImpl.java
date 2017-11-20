@@ -22,7 +22,6 @@ import br.com.trive.muambyte.models.OrderInfo;
 import br.com.trive.muambyte.models.PaginationResult;
 import br.com.trive.muambyte.models.Product;
  
-//Transactional for Hibernate
 @Transactional
 public class OrderDaoImpl implements OrderDao {
  
@@ -79,13 +78,10 @@ public class OrderDaoImpl implements OrderDao {
  
             session.persist(detail);
         }
- 
-        // Set OrderNum for report.
-        // Set OrderNum để thông báo cho người dùng.
+
         cartInfo.setOrderNum(orderNum);
     }
  
-    // @page = 1, 2, ...
     @Override
     public PaginationResult<OrderInfo> listOrderInfo(int page, int maxResult, int maxNavigationPage) {
         String sql = "Select new " + OrderInfo.class.getName()//
